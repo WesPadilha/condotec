@@ -1,14 +1,15 @@
 body {
-    background: url(../../assets//img/teste.jpg);
-    font-family: 'Courier New', Courier, monospace;
+	background: url(../../assets//img/teste.jpg);
+	font-family: 'Courier New', Courier, monospace;
 }
 
 html, body {
-    height: 100%;
-    overflow-x: hidden;}
+	height: 100%;
+	overflow-x: hidden;
+}
 
 .chat-messages{
-    background-color: white;
+	background-color: white;
     margin-left: 400px;
     margin-top: 50px;
     margin-right: 400px;
@@ -17,7 +18,7 @@ html, body {
     text-align: center;
     border-radius: 20px;
     border: 3px solid #00a2e8;
-        
+    
 }
 
 .titulo{
@@ -43,6 +44,7 @@ html, body {
     border: 0;
     outline: 0;
     font-size: 18px;
+    flex-wrap: nowrap;
 }
 
 .enviar{

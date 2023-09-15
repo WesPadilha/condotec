@@ -46,9 +46,9 @@ export default function Chat() {
     <br/>
     <div className="chat-messages">
         <h1 className='titulo'>Bem-vindo(a) ao Chat</h1>
-        <div className='caixa-mensagem'>
+        <div>
         {chatMessages.map((message) => (
-            <div key={message.id} className="mensagem">
+            <div key={message.id} className="mesagem">
                 {editingMessage === message.id ? (
                 <div>
                     <input
@@ -59,8 +59,8 @@ export default function Chat() {
                     <button onClick={handleSaveEdit}>Salvar</button>
                 </div>
                 ) : (
-                <div className='margem'>
-                    <p><br/>{message.content}<br/></p>
+                <div>
+                    <p>{message.content}</p>
                     <button onClick={() => handleEditMessage(message.id)}>Editar</button>
                     <button onClick={() => handleDeleteMessage(message.id)}>Delete</button>
                 </div>
