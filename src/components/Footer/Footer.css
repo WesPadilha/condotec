@@ -1,0 +1,29 @@
+body {
+	background: url(../../assets//img/teste.jpg);
+	font-family: 'Courier New', Courier, monospace;
+}
+
+html, body {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+footer {
+	background:linear-gradient(50deg,#00a2e8,#47c8ff,#38bbf2);
+	padding: 10px;
+	position: relative;
+}
+
+.lista{
+    list-style: none;
+	padding-left: 20px;
+}
+
+#roda{
+    color: white;
+	text-align: center;
+}
+
+.lista li{
+    display: inline;
+}
