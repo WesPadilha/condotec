@@ -7,8 +7,6 @@ import Home from '../pages/home';
 import Contato from '../pages/contatos';
 import Demo from '../pages/demo';
 
-
-
 function RoutesApp() {
   return (
     <Routes>

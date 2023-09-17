@@ -18,6 +18,13 @@ html, body {
     text-align: center;
 }
 
+.margem h1{
+    color: #0a95ff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    text-align: center;
+}
+
 .margem h2{
     color: #0a95ff;
     -webkit-text-stroke-width: 1px;
@@ -42,4 +49,53 @@ html, body {
 	text-align: justify;
 	align-items: center;
 	margin-right: 20px;
+}
+
+.caixa_geral2{
+	border: 3px solid #00a2e8;
+    background: #fff;
+    border-radius: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-left: 20px;
+    padding-right: 20px;
+	display: inline;
+	text-align: justify;
+	align-items: center;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+.post{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid;
+}
+
+.post h3,
+.post h4 {
+	margin-bottom:1rem;
+}
+
+.post h2::first-letter {
+	text-transform: uppercase;
+}
+
+.btn{
+	text-decoration: none;
+	background-color: #fff;
+	color:#000;
+	border: 1px solid #000000;
+	opacity: 1;
+	padding: 0.5rem 1rem;
+	border-radius: 1rem;
+	max-width: 100px;
+	transition: 0.3s;
+}
+
+.btn:hover{
+	color: #f1f1f1;
+	background-color: #000000;
 }

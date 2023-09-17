@@ -6,6 +6,9 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 
 import './../chat/chat.css'
+import lixo from './../../assets/img/lixeira.png'
+import disquete from './../../assets/img/disquete.png'
+import lapis from './../../assets/img/lapis.png'
 
 export default function Chat() {
   const { chatMessages, addMessage, updateMessage, deleteMessage } = useChatContext();
@@ -48,21 +51,23 @@ export default function Chat() {
         <h1 className='titulo'>Bem-vindo(a) ao Chat</h1>
         <div>
         {chatMessages.map((message) => (
-            <div key={message.id} className="mesagem">
+            <div key={message.id}>
                 {editingMessage === message.id ? (
-                <div>
-                    <input
+                <div className='edit-text'>
+                    <textarea
+                    style={{ width: "400px", height: "30px" }}
+                    className='text'
                     type="text"
                     value={editedMessage}
                     onChange={(e) => setEditedMessage(e.target.value)}
                     />
-                    <button onClick={handleSaveEdit}>Salvar</button>
+                    <button className='bnt2' onClick={handleSaveEdit}><img src={disquete} width="30" height="30"/></button>
                 </div>
                 ) : (
-                <div>
+                <div className='mensagem'>
                     <p>{message.content}</p>
-                    <button onClick={() => handleEditMessage(message.id)}>Editar</button>
-                    <button onClick={() => handleDeleteMessage(message.id)}>Delete</button>
+                    <button className='bnt' onClick={() => handleEditMessage(message.id)}><img src={lapis} width="30" height="30"/></button>
+                    <button className='bnt' onClick={() => handleDeleteMessage(message.id)}><img src={lixo} width="30" height="30"/></button>
                 </div>
                 )}
             </div>
@@ -72,6 +77,7 @@ export default function Chat() {
         <br/>
         <div className='caixa-enviar'>
             <input
+            style={{ width: "600px", height: "30px" }}
             className="caixa-text"
             type="text"
             placeholder="Digite sua mensagem"

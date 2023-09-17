@@ -8,18 +8,23 @@ html, body {
 	overflow-x: hidden;
 }
 
-.chat-messages{
-	background-color: white;
+.chat-messages {
+    background-color: white;
     margin-left: 400px;
     margin-top: 50px;
     margin-right: 400px;
     margin-bottom: 50px;
-    align-items: center;    
+    align-items: center;
     text-align: center;
     border-radius: 20px;
     border: 3px solid #00a2e8;
-    
-}
+    overflow-wrap: break-word;
+  }
+  
+  .chat-messages p {
+    word-wrap: break-word;
+  }
+  
 
 .titulo{
     color: #0a95ff;
@@ -29,9 +34,9 @@ html, body {
 }
 
 .caixa-enviar{
-    background-color: #44c5fc;
+    background-color: #8bb2eb;
     height: 50px;
-    padding: 10px;
+    padding: 10px;  
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,3 +58,55 @@ html, body {
     outline: 0;
     background: none;
 }
+
+.mensagem{
+    justify-content: space-between;
+    background-color: #8bb2eb;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #fff;
+    border-radius: 20px;
+    align-items: center;
+}
+.bnt{
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: none;
+    padding-top: 5px;
+}
+
+.bnt2{
+    margin-left: 350px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: none;
+    padding-top: 5px;
+}
+
+.edit-text{
+    background-color: #8bb2eb;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text{
+    background: none;
+    border: 0;
+    outline: 0;
+    font-size: 16px;;
+}
+  
+

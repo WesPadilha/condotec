@@ -51,7 +51,6 @@ function Demo() {
 					sunt aliquid id.</p>
 			</div>
 		</div>
-		<br/><br/><br/><br/>
 
         <Footer/>
 
