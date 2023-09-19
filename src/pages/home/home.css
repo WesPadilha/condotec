@@ -99,3 +99,17 @@ html, body {
 	color: #f1f1f1;
 	background-color: #000000;
 }
+
+.post-details {
+	border: 3px solid #00a2e8;
+	background: #fff;
+	border-radius: 20px;
+	padding: 10px;
+	margin-top: 20px;
+  }
+  
+  .post-details h2,
+  .post-details h3 {
+	color: #000000;
+  }
+  

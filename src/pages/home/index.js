@@ -1,45 +1,41 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-
 import '../home/home.css';
 import condominio1 from './../../assets/img/condo1.png';
 import condominio2 from './../../assets/img/condo1 - Copia.png';
-import { Link } from "react-router-dom";
 
-function Home(){
+function Home() {
+  const [posts, setPosts] = useState([]);
+  const [selectedPost, setSelectedPost] = useState(null);
 
-  const [posts, setPosts] = useState([])
-
-    const getPosts = async() =>{
-
-      try {
-
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-        
-        const data = response.data
-
-        setPosts(data)
-      } 
-      catch (error) {
-        console.log(error);
-      }
+  const getPosts = async () => {
+    try {
+      const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const data = response.data;
+      setPosts(data);
+    } catch (error) {
+      console.log(error);
     }
+  }
 
-    useEffect(()=>{
+  useEffect(() => {
+    getPosts();
+  }, []);
 
-      getPosts();
+  const handlePostClick = (post) => {
+    setSelectedPost(post);
+  };
 
-    })
+  const handleCloseClick = () => {
+    setSelectedPost(null); 
+  };
 
-    
-    return (
-      <>
-      <Header/>
-        <br/><br/>
+  return (
+    <>
+      <Header />
+      <br/><br/>
         <div className="margem">
           <div className="caixa_geral">
             <h2>Aprecie nossos apartamentos!</h2>
@@ -91,25 +87,35 @@ function Home(){
             </form>
           </div>
 				</div>
-        <div className="margem">
-          <div className="caixa_geral2">
-            <h1>Comentários de clientes</h1>
-            {posts.length === 0 ? (
-              <p>carregando...</p>
-            ) : (
-              posts.map((post) => (
-                <div className="post" key={post.id}>
-                  <h3>TÍTULO: {post.title}</h3>
-                  <h4>COMENTÁRIO: {post.body}</h4>
-                  <Link to={`/posts/${post.id}`} className="btn">Ler mais</Link>
-                </div> 
-              ))
-            )}
-          </div>
+      <div className="margem">
+        <div className="caixa_geral2">
+          <h1>Comentários de clientes</h1>
+          {posts.length === 0 ? (
+            <p>carregando...</p>
+          ) : (
+            posts.map((post) => (
+              <div className="post" key={post.id}>
+                <h3>TÍTULO: {post.title}</h3>
+                <h4>COMENTÁRIO: {post.body}</h4>
+                <button onClick={() => handlePostClick(post)} className="btn">Ler mais</button>
+              </div>
+            ))
+          )}
         </div>
-        <br/><br/><br/>
-        <Footer/>
-      </>
-    );
-  }
+        {selectedPost && (
+          <div>
+            <div className="post-details">
+              <h2>Título: {selectedPost.title}</h2>
+              <h3>Comentário: {selectedPost.body}</h3>
+              <button onClick={handleCloseClick} className="btn">Fechar</button>
+            </div>
+          </div>
+        )}
+      </div>
+      <br /><br /><br />
+      <Footer />
+    </>
+  );
+}
+
 export default Home;
